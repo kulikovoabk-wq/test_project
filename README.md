@@ -34,7 +34,8 @@ pytest -v
 # С генерацией Allure отчетов
 pytest --alluredir=./allure-results
 
-## Запуск в Docker:
+## Запуск в Docker
+
 ```bash
 git clone https://github.com/kulikovoabk-wq/test_project.git
 cd test_project
