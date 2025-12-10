@@ -21,7 +21,7 @@ test_project/
 ├── pytest.ini
 └── README.md
 
-## Локальный запуск
+## Локальный запуск ##
 
 ```bash
 git clone https://github.com/kulikovoabk-wq/test_project.git
@@ -33,7 +33,7 @@ pip install allure-pytest
 pytest -v
 # С генерацией Allure отчетов
 pytest --alluredir=./allure-results
-
+```
 ## Запуск в Docker
 
 ```bash
@@ -45,3 +45,4 @@ docker build -t test_project -f docker/Dockerfile .
 docker run --rm test_project
 # Запуск с монтированием volume для результатов
 docker run --rm -v $(pwd)/allure-results:/app/allure-results test_project
+```
