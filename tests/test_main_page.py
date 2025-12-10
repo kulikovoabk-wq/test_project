@@ -1,5 +1,6 @@
 import pytest
 import allure
+import re
 from playwright.sync_api import expect
 from page.main_page import MainPage
 
@@ -37,7 +38,8 @@ class TestMainPageNavigation:
                 f"Ожидаемый паттерн '{expected_url_pattern}' не найден в URL: {current_url}"
 
         with allure.step("Проверить загрузку страницы"):
-            expect(page).to_have_url(f"**/{expected_url_pattern}**")
+            pattern = re.compile(rf".+{re.escape(expected_url_pattern)}")
+            expect(page).to_have_url(pattern)
 
     @allure.title("Проверка доступности всех элементов навигации")
     def test_all_navigation_items_visible(self, page):
